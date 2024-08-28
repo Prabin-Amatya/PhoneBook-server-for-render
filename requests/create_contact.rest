@@ -2,7 +2,6 @@ POST http://127.0.0.1:3001/api/phonebook
 Content-Type: application/json
 
 {
-    "id": "9",
-    "name": "oiu",
-    "number": "098"
+    "name": "what",
+    "number": "987"
 }

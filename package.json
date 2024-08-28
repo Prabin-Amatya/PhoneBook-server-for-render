@@ -7,9 +7,10 @@
     "test": "echo \"Err no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "debug": "nodemon --inspect index.js",
     "build:ui": "rm -rf dist && cd ../Client && npm run build && cp -r dist ../Server",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin master"
-
   },
   "repository": {
     "type": "git",
@@ -27,10 +28,16 @@
   },
   "homepage": "https://github.com/Prabin-Amatya/FullstackProjects#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.5.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@stylistic/eslint-plugin-js": "^2.6.4",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "nodemon": "^3.1.4"
   }
 }

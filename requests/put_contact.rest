@@ -1,0 +1,7 @@
+PUT  http://127.0.0.1:3001/api/phonebook/23423
+Content-Type: application/json
+
+{
+    "name": "fsdfsdad",
+    "number": "098876"
+}
