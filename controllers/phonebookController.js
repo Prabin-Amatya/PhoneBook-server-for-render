@@ -1,5 +1,5 @@
 const phonebookRouter = require('express').Router()
-const phonebook = require('./models/phonebook')
+const phonebook = require('../models/phonebook')
 
 
 phonebookRouter.get('/', (request, response) => {
@@ -36,7 +36,7 @@ phonebookRouter.post('/', (request, response, next) => {
     })
 })
 
-phonebookRouter.put(':id', (request, response) =>
+phonebookRouter.put('/:id', (request, response) =>
 {
   phonebook.findByIdAndUpdate(request.params.id, request.body, { runValidators:true ,context:'query' })
     .then(filler => response.json(request.body))
@@ -45,7 +45,7 @@ phonebookRouter.put(':id', (request, response) =>
     ))
 })
 
-phonebookRouter.delete(':id', (request, response) =>
+phonebookRouter.delete('/:id', (request, response) =>
 {
   const id = request.params.id
   phonebook.findByIdAndDelete(id).then(
